@@ -1,11 +1,12 @@
 ;;;; cl-ini.asd
 
 (asdf:defsystem #:cl-ini
-  :description "Describe cl-ini here"
-  :author "ava fox"
+  :description "INI file parser"
+  :author "ava fox <dev@computerfox.xyz>"
   :license  "MIT"
-  :version "0.0.1"
+  :version "0.1"
   :serial t
   :depends-on (#:str)
   :components ((:file "package")
-               (:file "cl-ini")))
+               (:file "cl-ini"))
+  :in-order-to ((test-op (test-op "cl-ini-test"))))
