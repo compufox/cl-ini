@@ -31,9 +31,9 @@
              (mapcar #'str:trim (str:lines (str:from-file file)))))
 
 (defun parse-keypair (keypair)
-  (let* ((split (mapcar #'str:trim (str:split "=" keypair)))
-         (key (to-keyword (first split)))
-         (value (parse-value (cadr split))))
+  (let* ((split (str:split "=" keypair))
+         (key (to-keyword (str:trim (first split))))
+         (value (parse-value (str:trim (str:join "=" (cdr split))))))
     (cons key value)))
 
 (defun parse-value (value)
